@@ -16,6 +16,26 @@ The directory, FSx for Windows and FSx for Lustre all bill **per hour while they
 
 Rates are approximate list prices; check the pricing pages for current figures. Cost Explorer refreshes at least once every 24 hours, so the final figure appears the next day.
 
+## What Cost Explorer showed
+
+The day after, Cost Explorer for **5–6 October 2026** ([`40`](screenshots/40-cost-explorer-oct-5-6.png)), grouped by service. The range is inclusive, so it covers the three builds I ran on 5 October (`aws-aurora-ha-architecture`, `aws-shared-file-storage` and `aws-hybrid-storage-transfer`), whatever had posted of 6 October (when I ran `aws-route53-routing-lab`), and the services that run in the account all the time:
+
+| Service | Cost |
+|---|---|
+| Config (always on, from `aws-cloudtrail-config-governance`) | US$1.37 |
+| EC2-Instances (all three builds) | US$0.90 |
+| Relational Database Service (the Aurora build) | US$0.39 |
+| FSx | US$0.18 |
+| EC2-Other (EBS volumes, including the gateway's cache disk) | US$0.17 |
+| Security Hub (always on) | US$0.12 |
+| DataSync | US$0.10 |
+| Elastic File System | US$0.09 |
+| VPC | US$0.06 |
+| Others | US$0.15 |
+| **Total** | **US$3.53** |
+
+This build's own lines are FSx (US$0.18) and Elastic File System (US$0.09), plus its share of EC2. Services without their own line (such as the directory) are in Others or not yet posted. Leaving out Config and Security Hub, which run whatever I build, everything else came to about **US$2.04**: mainly the three 5 October builds, plus whatever of 6 October had posted. That's well under my estimates for the three builds added together. Cost Explorer can still be catching up on the most recent day, so I treat this as a floor rather than a final bill.
+
 ## Price per GB is not the whole story
 
 Approximate list prices, per GB-month:

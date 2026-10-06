@@ -149,7 +149,7 @@ Three services here bill **by the hour while they exist**, so I built, measured 
 | S3, Secrets Manager | per GB / per secret-month | cents |
 | **Total (estimate)** | | **about US$1–2** |
 
-At the clients' real sizes the picture changes, and the minimums matter more than the per-GB price. For example, a 32 GiB Windows share costs about US$75 a month, and US$70 of that is the throughput, not the storage. Details: [`docs/cost-model.md`](docs/cost-model.md).
+At the clients' real sizes the picture changes, and the minimums matter more than the per-GB price. For example, a 32 GiB Windows share costs about US$75 a month, and US$70 of that is the throughput, not the storage. Cost Explorer for 5–6 October ([`40`](docs/screenshots/40-cost-explorer-oct-5-6.png)) showed US$3.53 for the whole account, of which about US$2.04 was everything except always-on Config and Security Hub: mainly this and the two other builds I ran on 5 October. Details: [`docs/cost-model.md`](docs/cost-model.md).
 
 ---
 
@@ -212,7 +212,7 @@ All three datasets are sensitive: customer design work, a financial services fir
     ├── cost-model.md
     ├── teardown.md
     ├── adr/                          # 6 architecture decision records
-    └── screenshots/                  # 39 build, drill, test and teardown screenshots, in order
+    └── screenshots/                  # 40 build, drill, test, teardown and cost screenshots, in order
 ```
 
 > **No account IDs are committed.** Templates use `@@NAME@@` placeholders filled at run time, and account IDs are masked in the screenshots. There is no `Deny` statement anywhere, and nothing has deletion protection, so teardown can't lock anyone out.
